@@ -175,9 +175,9 @@ public class Vector2D
     public string ToString(string? format)
     {
         format = format?.ToUpper();
-        if(string.IsNullOrWhiteSpace(format) || format == "G") return ToString();
+        if(string.IsNullOrWhiteSpace(format) || format == "G") 
+            return ToString();
 
-        
         StringBuilder output = new();
 
         for (var i = 0; i < format.Length; i++)
