@@ -55,7 +55,7 @@ public readonly record struct AngleMeasure(double Theta = 0, AngularUnit Unit = 
         // if the units are not the same, then we have to convert one!
         return a with { Theta = a.Theta + b.ToUnit(a.Unit).Theta };
     }
-    
+
     /// <summary>
     /// subtract b from a...
     /// The resulting angle will be in the same units as `a`
@@ -65,7 +65,15 @@ public readonly record struct AngleMeasure(double Theta = 0, AngularUnit Unit = 
     /// <param name="b">right side of -</param>
     /// <returns>difference</returns>
     public static AngleMeasure operator -(AngleMeasure a, AngleMeasure b)
-        => throw new NotImplementedException("Implement this method!");
+    {
+        // Here's a pattern that you can use with records where you only need
+        // change \some\ of the values.  
+        if(a.Unit == b.Unit) 
+            return a with { Theta = a.Theta - b.Theta };
+        
+        // if the units are not the same, then we have to convert one!
+        return a with { Theta = a.Theta - b.ToUnit(a.Unit).Theta };
+    }
 }
 
 /// <summary>
