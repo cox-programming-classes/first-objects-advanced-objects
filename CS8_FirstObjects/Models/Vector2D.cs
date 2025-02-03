@@ -58,7 +58,7 @@ public class Vector2D
     /// <returns>a new Vector2D object with the given coordinates</returns>
     public static Vector2D FromRectangular(double x, double y) 
         => new() { X = x, Y = y };
-    
+
     /// <summary>
     /// Create a new Vector using polar coordinates.
     /// </summary>
@@ -67,7 +67,7 @@ public class Vector2D
     /// <returns></returns>
     /// <exception cref="NotImplementedException">TODO: Implement this method by calculating X and Y</exception>
     public static Vector2D FromPolar(double r, AngleMeasure angle)
-        => throw new NotImplementedException("You need to implement this function.");
+        => new() { X = r * Math.Cos(angle.ToUnit(AngularUnit.Radians).Theta), Y = r * Math.Sin(angle.ToUnit(AngularUnit.Radians).Theta) };
     
     #endregion
     
