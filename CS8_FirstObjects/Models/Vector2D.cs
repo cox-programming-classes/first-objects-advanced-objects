@@ -67,7 +67,10 @@ public class Vector2D
     /// <returns></returns>
     /// <exception cref="NotImplementedException">TODO: Implement this method by calculating X and Y</exception>
     public static Vector2D FromPolar(double r, AngleMeasure angle)
-        => new() { X = r * Math.Cos(angle.ToUnit(AngularUnit.Radians).Theta), Y = r * Math.Sin(angle.ToUnit(AngularUnit.Radians).Theta) };
+        => Vector2D.FromRectangular(
+                r * Math.Cos(angle.ToUnit(AngularUnit.Radians).Theta), 
+                r * Math.Sin(angle.ToUnit(AngularUnit.Radians).Theta) 
+            );
     
     #endregion
     
