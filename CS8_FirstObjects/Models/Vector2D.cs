@@ -1,4 +1,4 @@
-using System.Numerics;
+
 using System.Text;
 
 namespace CS8_FirstObjects.Models;
@@ -27,7 +27,6 @@ public class Vector2D
     /// <summary>
     /// Compute the Angle of this vector!
     /// </summary>
-    /// <exception cref="NotImplementedException">TODO: Complete this code to get rid of this exception.</exception>
     public AngleMeasure Angle => new(Math.Atan2(Y, X));
     #endregion
     
@@ -120,8 +119,10 @@ public class Vector2D
     /// Get a Unit Vector in the same direction as this vector.
     /// </summary>
     /// <returns>A vector with Magnitude = 1 in the same direction as this vector.</returns>
-    /// <exception cref="NotImplementedException">TODO: Implement!</exception>
-    public Vector2D UnitVector() => throw new ((X/Math.Sqrt(X * X + Y * Y)), Y/Math.Sqrt(X*X+Y*Y));
+    public Vector2D UnitVector(bool computeAsRectangular = true) => 
+        computeAsRectangular ?
+         Vector2D.FromRectangular(X/Magnitude, Y/Magnitude) :
+         Vector2D.FromPolar(1, Angle);
     
     /// <summary>
     /// Rotate this vector by a given angle!

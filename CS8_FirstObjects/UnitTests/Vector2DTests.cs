@@ -50,6 +50,21 @@ public static class Vector2DTests
         }
     }
 
+    public static void TestUnitVectors(List<Vector2D> vectors)
+    {
+        foreach (var v in vectors)
+        {
+            var fromPolar = v.UnitVector(computeAsRectangular: false);
+            var fromRectangular = v.UnitVector();
+            
+            Console.WriteLine($"v => {v}, magnitude: {v.Magnitude}, angle: {v.Angle}");
+            Console.WriteLine($"fromPolar => {fromPolar}, magnitude: {fromPolar.Magnitude}, angle: {fromPolar.Angle}");
+            Console.WriteLine($"fromRectangular => {fromRectangular}, magnitude: {fromRectangular.Magnitude}, angle: {fromRectangular.Angle}");
+            Console.WriteLine("__________________________________");
+        }
+    }
+    
+    
     /// <summary>
     /// TODO:  Test all the arithmetic operations you have written!
     /// </summary>
