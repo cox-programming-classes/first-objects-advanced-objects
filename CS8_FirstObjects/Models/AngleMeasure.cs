@@ -19,8 +19,9 @@ public readonly record struct AngleMeasure(double Theta = 0, AngularUnit Unit = 
         return new AngleMeasure(Unit: newUnit, Theta: newUnit switch
         {
             // if the newUnit is Radians...
-            AngularUnit.Radians => throw new NotImplementedException("Compute Degrees to Radians"),
+            AngularUnit.Radians => Theta * Math.PI/180,
             AngularUnit.Degrees => Theta * 180/Math.PI,
+            _ => throw new ArgumentOutOfRangeException(nameof(newUnit), newUnit, null)
         });
     }
 
