@@ -121,7 +121,7 @@ public class Vector2D
     /// </summary>
     /// <returns>A vector with Magnitude = 1 in the same direction as this vector.</returns>
     /// <exception cref="NotImplementedException">TODO: Implement!</exception>
-    public Vector2D UnitVector() => throw new NotImplementedException("You need to implement this function.");
+    public Vector2D UnitVector() => throw new ((X/Math.Sqrt(X * X + Y * Y)), Y/Math.Sqrt(X*X+Y*Y));
     
     /// <summary>
     /// Rotate this vector by a given angle!
