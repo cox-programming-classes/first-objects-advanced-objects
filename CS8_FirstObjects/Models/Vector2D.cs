@@ -133,9 +133,8 @@ public class Vector2D
     /// <returns></returns>
     /// <exception cref="NotImplementedException">TODO: Implement!</exception>
     public Vector2D Rotate(AngleMeasure angle)
-    {
-        throw new NotImplementedException();
-    }
+      =>  Vector2D.FromPolar(Magnitude, angle + Angle);
+    
 
     /// <summary>
     /// Compute the projection of this vector onto another vector.
