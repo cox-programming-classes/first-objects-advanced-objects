@@ -144,10 +144,8 @@ public class Vector2D
     /// <param name="other"></param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException">TODO: Research and Implement~</exception>
-    public Vector2D ProjectOnto(Vector2D other)
-    {
-        throw new NotImplementedException();
-    }
+    public Vector2D ProjectOnto(Vector2D other) =>
+        ((this * other) / (this * this)) * this;
     #endregion
     
     #region ToString Operations
