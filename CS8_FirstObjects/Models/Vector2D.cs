@@ -100,9 +100,8 @@ public class Vector2D
     /// <param name="a">left side of *</param>
     /// <param name="b">right side of *</param>
     /// <returns>Dot Product</returns>
-    /// <exception cref="NotImplementedException">TODO:  Implement this!</exception>
     public static double operator *(Vector2D a, Vector2D b)
-        => throw new NotImplementedException("You need to implement this function.");
+        => a.X*b.X + a.Y*b.Y;
     
     /// <summary>
     /// Scale the vector a by a given constant factor.
