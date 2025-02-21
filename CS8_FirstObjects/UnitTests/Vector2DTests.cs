@@ -63,7 +63,18 @@ public static class Vector2DTests
             Console.WriteLine("__________________________________");
         }
     }
+
+    public static void TestAdditionOperator(Vector2D vector1, Vector2D vector2)
+    {
+        Console.WriteLine("vector1, vector2");
+        Console.WriteLine($"Sum: {vector1 + vector2}");
+    }
     
+    public static void TestSubtractionOperator(Vector2D vector1, Vector2D vector2)
+    {
+        Console.WriteLine("vector1, vector2");
+        Console.WriteLine($"Difference: {vector1 - vector2}");
+    }
     
     /// <summary>
     /// TODO:  Test all the arithmetic operations you have written!
