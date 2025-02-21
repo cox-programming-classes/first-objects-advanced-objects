@@ -1,4 +1,5 @@
 using CS8_FirstObjects.Models;
+using System.Xml;
 
 namespace CS8_FirstObjects.UnitTests;
 
@@ -92,8 +93,31 @@ public static class Vector2DTests
     {
         foreach(var vector in others)
         {
-            this.ProjectOnto(vector);
+            //this.ProjectOnto(vector);
         }
            
     }
+    public static void TestDotProduct(List<Vector2D> vectors)
+        => vectors.ForEachPair ((a, b) => Console.WriteLine(
+        $"{a.ToString("<{x:0.00}, {y:0.00}>")}*" +
+        $"{b.ToString("<{x:0.00}, {y:0.00}>")} =" +
+        $"{a*b:0.00}"));
+
+    public static void ForEachPair(
+        this IEnumerable<Vector2D> vectors,
+        Action<Vector2D, Vector2D> action)
+    {
+        using var enumerator = vectors.GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            var(a, b) =
+                (enumerator.Current, 
+                enumerator.MoveNext()
+                ? enumerator.Current
+                : Vector2D.FromRectangular(0, 0));
+            action(a, b);
+            
+        }
+    }
+
 }

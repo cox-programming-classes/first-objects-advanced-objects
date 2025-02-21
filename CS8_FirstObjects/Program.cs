@@ -8,4 +8,5 @@ var angles = AngleTests.GenerateRandomAngleMeasures();
 AngleTests.PrintAngles(angles);
 */
 Console.WriteLine("Test some Vectors!");
-var vectors = Vector2DTests.GenerateRandomVectors();
+var vectors = Vector2DTests.GenerateRandomVectors(100);
+Vector2DTests.TestDotProduct(vectors);
