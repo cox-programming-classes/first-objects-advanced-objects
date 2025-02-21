@@ -75,5 +75,13 @@ public static class Vector2DTests
         Console.WriteLine("vector1, vector2");
         Console.WriteLine($"Difference: {vector1 - vector2}");
     }
-    
+
+    public static void TestProjectOnto(List<Vector2D> others)
+    {
+        foreach(var vector in others)
+        {
+            this.ProjectOnto(vector);
+        }
+           
+    }
 }
