@@ -76,13 +76,4 @@ public static class Vector2DTests
         Console.WriteLine($"Difference: {vector1 - vector2}");
     }
     
-    /// <summary>
-    /// TODO:  Test all the arithmetic operations you have written!
-    /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    public static void TestArithmeticOperators()
-    {
-        throw new NotImplementedException();
-    }
-    
 }
