@@ -12,24 +12,29 @@ public class Vector2D
     /// <summary>
     /// X Coordinate of this Vector
     /// </summary>
-    public required double X { get; init; }
-    
+    //public required double X { get; init; }
+    public double X => Magnitude*Math.Cos(Angle.ToUnit(AngularUnit.Radians).Theta);
+
     /// <summary>
     /// Y Coordinate of this Vector
     /// </summary>
-    public required double Y { get; init; }
-    
+    //public required double Y { get; init; }
+    public double Y => Magnitude*Math.Sin(Angle.ToUnit(AngularUnit.Radians).Theta);
+
     /// <summary>
     /// Computed Magnitude of this vector.
     /// </summary>
-    public double Magnitude => Math.Sqrt(X * X + Y * Y);
-    
+    //public double Magnitude => Math.Sqrt(X * X + Y * Y);
+    public required double Magnitude {  get; init; }
+
     /// <summary>
     /// Compute the Angle of this vector!
     /// </summary>
-    public AngleMeasure Angle => new(Math.Atan2(Y, X));
+    //public AngleMeasure Angle => new(Math.Atan2(Y, X));
+    public required AngleMeasure Angle { get; init; }
+
     #endregion
-    
+
     #region Constructors
     /// <summary>
     /// The Constructor is a special method that is use exclusively in
