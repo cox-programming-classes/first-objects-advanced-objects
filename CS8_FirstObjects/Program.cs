@@ -9,4 +9,5 @@ AngleTests.PrintAngles(angles);
 */
 Console.WriteLine("Test some Vectors!");
 var vectors = Vector2DTests.GenerateRandomVectors();
-Vector2DTests.TestUnitVectors(vectors);
+
+Vector2DTests.TestSubtractionOperator(vectors);
