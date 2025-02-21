@@ -88,7 +88,7 @@ public class Vector2D
     /// <param name="b">right side of +</param>
     /// <returns>sum</returns>
     public static Vector2D operator +(Vector2D a, Vector2D b) 
-        => new () { X = a.X + b.X, Y = a.Y + b.Y };
+        => Vector2D.FromRectangular(a.X + b.X, a.Y + b.Y);
     
     /// <summary>
     /// Subtract b from a
@@ -97,7 +97,7 @@ public class Vector2D
     /// <param name="b">right side of -</param>
     /// <returns>difference</returns>
     public static Vector2D operator -(Vector2D a, Vector2D b)
-        => new () { X = a.X - b.X, Y = a.Y - b.Y };
+        => Vector2D.FromRectangular(a.X - b.X, a.Y - b.Y);
     
     /// <summary>
     /// Compute the Dot-Product (aka Inner Product) of a and b
