@@ -72,7 +72,7 @@ public static class Vector2DTests
             var vector1 = vectors[i];
             var vector2 = vectors[i + 1];
             Console.WriteLine($"vector1: {vector1}, vector2: {vector2}");
-            Console.WriteLine($"Sum = {vector1 + vector2}");
+            Console.WriteLine($"SUm = {vector1 + vector2}");
         }
     }
 
@@ -83,7 +83,7 @@ public static class Vector2DTests
             var vector1 = vectors[i];
             var vector2 = vectors[i + 1];
             Console.WriteLine($"vector1: {vector1}, vector2: {vector2}");
-            Console.WriteLine($"Sum = {vector1 - vector2}");
+            Console.WriteLine($"Difference = {vector1 - vector2}");
         }
 
     }
